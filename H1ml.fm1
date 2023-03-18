@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Need to mix up your music taste?</h1>
+<img src="m" alt="music-background" width="250" height="200">
+
+<h2>Try our music generator and experience a new vibe for any enviorment.</h2>
+
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = ">
+Lets get started!</button>
+
+<p id="demo"></p>
+<footer>
+  <p> Ashely Trollinger, Manuella Osorio, Patrick Morgan, Stacey Amoah<br>
+  
+</footer>
+
+
+</body>
+</html> 
