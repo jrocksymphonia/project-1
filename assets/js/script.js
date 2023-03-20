@@ -1,3 +1,4 @@
+
 //Capturing the two 3rd-party APIs we'll be using
 
 //Bored API giving us a randomized event 
@@ -40,3 +41,9 @@ fetch('https://jsonplaceholder.typicode.com/todos/1')
 
         console.error("Error fetching data, ", error)
     });
+
+var startButton = document.getElementById("startButton");
+
+function loadForm() {
+    window.location.href = "form.html";
+}
