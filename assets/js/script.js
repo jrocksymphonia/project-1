@@ -12,7 +12,7 @@ var artist;
 var album;
 var track;
 
-
+//Search parameters for our form. Currently set up to look up a specific artist/album/track
 var albumSearch = "/2.0/?method=album.search&album=" + album + "&api_key=" + apiKey + "&format=json";
 var artistSearch = "/2.0/?method=artist.search&artist=" + artist + "&api_key=" + apiKey + "&format=json";
 var trackSearch = "/2.0/?method=track.search&track=" + track + "&api_key=" + apiKey + "&format=json";
