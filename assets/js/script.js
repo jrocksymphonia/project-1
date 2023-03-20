@@ -17,3 +17,26 @@ var albumSearch = "/2.0/?method=album.search&album=" + album + "&api_key=" + api
 var artistSearch = "/2.0/?method=artist.search&artist=" + artist + "&api_key=" + apiKey + "&format=json";
 var trackSearch = "/2.0/?method=track.search&track=" + track + "&api_key=" + apiKey + "&format=json";
 
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(function(response){
+        if(!response.ok){
+                throw new Error(`Hey ... checkout your work`)
+        }
+
+        return response.json(); // parse my response to get the data
+    }).then(function(data){
+        console.log(data)
+
+        // TODO:
+        // For loop over the array and get the data that you want from the object. 
+        // Then manipulate the DOM to print that data on the white screen!!!  
+
+        for(i =0; i < data.length; i++){
+            
+        }
+
+    }).catch(function(error){
+
+        console.error("Error fetching data, ", error)
+    });
