@@ -15,12 +15,10 @@
 
 <h2>Try our music generator and experience a new vibe for any enviorment.</h2>
 
-<button type="button"
-onclick="document.getElementById(click).innerHTML = ">
-Lets get started!</button>
+
   
 <footer>
-  <p> Ashely Trollinger, Manuella Osorio, Patrick Morgan, Stacey Amoah<br>
+  <p> Asheley Trollinger, Manuella Osario, Patrick Morgan, Stacey Amoah<br>
   
 </footer>
 
