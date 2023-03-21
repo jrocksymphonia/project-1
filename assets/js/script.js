@@ -15,8 +15,8 @@ var trackTag;
 
 //Query parameters for our form. Currently set up to look up a specific artist/album/track
 var albumResult = "?method=tag.gettopalbums&tag=" + albumTag + "&limit=1&api_key=" + apiKey + "&format=json";
-var artistResult = "?method=tag.gettopartists&tag=" + artistTag + "&api_key=" + apiKey + "&format=json";
-var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&api_key=" + apiKey + "&format=json";
+var artistResult = "?method=tag.gettopartists&tag=" + artistTag + "&limit=1&api_key=" + apiKey + "&format=json";
+var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&limit=1&api_key=" + apiKey + "&format=json";
 
 
 fetch('https://jsonplaceholder.typicode.com/todos/1')
