@@ -1,0 +1,32 @@
+h1 {
+    text-align: center;
+    padding-top: 100px;
+    font-family: 'Tilt Neon', cursive;
+    font-size: 50px;
+    
+    
+}
+
+body{
+
+margin: 0;
+padding: 0;
+height: 50vh;
+justify-content: center;
+align-items: center;
+display:flex;
+
+
+}
+
+.btn {
+    font-family: "Roboto", sans-serif;
+    font-size: 4rem;
+
+    display: inline-block;
+    cursor:pointer:
+    
+
+
+}
+
