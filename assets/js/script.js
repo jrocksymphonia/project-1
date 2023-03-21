@@ -19,25 +19,27 @@ var artistResult = "?method=tag.gettopartists&tag=" + artistTag + "&limit=1&api_
 var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&limit=1&api_key=" + apiKey + "&format=json";
 
 
+var dropdown = document.getElementById("dropdown");
+
 fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(function(response){
-        if(!response.ok){
-                throw new Error(`Hey ... checkout your work`)
+    .then(function (response) {
+        if (!response.ok) {
+            throw new Error(`Hey ... checkout your work`)
         }
 
         return response.json(); // parse my response to get the data
-    }).then(function(data){
+    }).then(function (data) {
         console.log(data)
 
         // TODO:
         // For loop over the array and get the data that you want from the object. 
         // Then manipulate the DOM to print that data on the white screen!!!  
 
-        for(i =0; i < data.length; i++){
-            
+        for (i = 0; i < data.length; i++) {
+
         }
 
-    }).catch(function(error){
+    }).catch(function (error) {
 
         console.error("Error fetching data, ", error)
     });
@@ -46,4 +48,20 @@ var startButton = document.getElementById("startButton");
 
 function loadForm() {
     window.location.href = "form.html";
+}
+
+function getActivity() {
+    fetch(randomActivity)
+        .then(function (response) {
+            //We need to break apart the object and randomize it
+            return response.json();
+        })
+        .then(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                var newOption = document.createElement('option');
+                newOption.textContent = data[i].innerHTML;
+                dropdown.appendChild(newOption);
+            }
+        })
+
 }
