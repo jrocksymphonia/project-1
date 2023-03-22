@@ -1,0 +1,38 @@
+
+
+#homePage {
+    text-align: center;
+    padding-top: 100px;
+    font-family: 'Tilt Neon', cursive;
+    font-size: 50px;
+
+    
+}
+
+body {
+    text-align: center;
+
+}
+
+
+#startButton {
+    
+    border: 1px solid #3498db;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    margin: 15px;
+    
+
+}
+
+.btn {
+    color: black;
+}
+
+.btn:hover {
+    color:blue; 
+
+}
