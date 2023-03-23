@@ -50,9 +50,28 @@ function getActivity() {
 var submitButton = document.getElementById("submitButton");
 var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
+var questionOne = document.getElementById("question1");
+
+
 
 function loadResults() {
     form.remove();
+    //Getting the answer to question one to determine which fetch to use
+    var questionOneAnswers = document.getElementsByName('question1');
+    for (i=0;i< questionOneAnswers.length; i++){
+        if(questionOneAnswers[i].checked){
+            var questionOneAnswer = questionOneAnswers[i];
+        }
+    }
+    
+    //Maybe create 3 seperate functions to call inside each of these instead of moving the whole fetch. That way we can also use the users second answer to filter results
+    if(questionOneAnswer == "Artist"){
+        //Artist fetch
+    }else if (questionOneAnswer == "Track"){
+        // Track fetch
+    }else {
+        //Album fetch
+    }
 }
 
 //last.fm fetch tester (ablum)
