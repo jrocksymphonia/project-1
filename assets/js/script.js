@@ -69,7 +69,9 @@ function getActivity() {
 }
 
 var submitButton = document.getElementById("submitButton");
+var formPage = document.getElementById("formPage");
+var form = document.getElementById("form");
 
-function loadResults(){
-    
+function loadResults() {
+    formPage.removeChild(form);
 }
