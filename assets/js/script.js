@@ -9,7 +9,7 @@ var lastFmBaseURL = "http://ws.audioscrobbler.com/2.0/";
 var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 
 //The value is the activity of choice! 
-var artistTag = "cleaning";
+var artistTag = "exercise";
 var albumTag = "exercise";
 var trackTag= "";
 
@@ -62,7 +62,16 @@ fetch(lastFmBaseURL + albumResult)
 })
 .then(function (data) {
     console.log(data);
-    // console.log(data.albums.album);
+    //large image of album art
+    console.log(data.albums.album[0].image[2]);
+    //album name
+    console.log(data.albums.album[0].name);
+    //artist name
+    console.log(data.albums.album[0].artist.name);
+    //url to album
+    console.log(data.albums.album[0].url);
+    
+
 
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
@@ -90,7 +99,14 @@ fetch(lastFmBaseURL + artistResult)
 })
 .then(function (data) {
     console.log(data);
+    //artist image
+    console.log(data.topartists.artist[0].image[3]);
+    //artist name
     console.log(data.topartists.artist[0].name);
+    //url to artist
+    console.log(data.topartists.artist[0].url);
+
+
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
     // dropdown.appendChild(newOption);
