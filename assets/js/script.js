@@ -9,9 +9,9 @@ var lastFmBaseURL = "http://ws.audioscrobbler.com/2.0/";
 var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 
 //The value is the activity of choice! 
-var artistTag = "cleaning";
+var artistTag = "exercise";
 var albumTag = "exercise";
-var trackTag= "";
+var trackTag= "exercise";
 
 //Query parameters for our form. Currently set up to look up a specific artist/album/track
 var albumResult = "?method=tag.gettopalbums&tag=" + albumTag + "&limit=1&api_key=" + apiKey + "&format=json";
@@ -62,10 +62,18 @@ fetch(lastFmBaseURL + albumResult)
 })
 .then(function (data) {
     console.log(data);
+    //large image of album art
+    console.log(data.albums.album[0].image[2]);
+    //album name
+    console.log(data.albums.album[0].name);
+    //artist name
+    console.log(data.albums.album[0].artist.name);
+    //url to album
+    console.log(data.albums.album[0].url);
+    
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
     // dropdown.appendChild(newOption);
-    
 })
 
 //last.fm fetch tester (song)
@@ -75,10 +83,18 @@ fetch(lastFmBaseURL + trackResult)
 })
 .then(function (data) {
     console.log(data);
+    //song image
+    console.log(data.tracks.track[0].image[2]);
+    //song name
+    console.log(data.tracks.track[0].name);
+    //artist name
+    console.log(data.tracks.track[0].artist.name);
+    //url to song
+    console.log(data.tracks.track[0].url)
+
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
     // dropdown.appendChild(newOption);
-    
 })
 
 //last.fm fetch tester (artist)
@@ -88,8 +104,14 @@ fetch(lastFmBaseURL + artistResult)
 })
 .then(function (data) {
     console.log(data);
+    //artist image
+    console.log(data.topartists.artist[0].image[3]);
+    //artist name
+    console.log(data.topartists.artist[0].name);
+    //url to artist
+    console.log(data.topartists.artist[0].url);
+
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
     // dropdown.appendChild(newOption);
-    
 })
