@@ -46,6 +46,15 @@ function getActivity() {
 
 }
 
+
+var submitButton = document.getElementById("submitButton");
+var formPage = document.getElementById("formPage");
+var form = document.getElementById("form");
+
+function loadResults() {
+    formPage.removeChild(form);
+}
+
 //last.fm fetch tester (ablum)
 fetch(lastFmBaseURL + albumResult)
 .then(function (response) {
@@ -84,4 +93,3 @@ fetch(lastFmBaseURL + artistResult)
     // dropdown.appendChild(newOption);
     
 })
-
