@@ -62,6 +62,7 @@ fetch(lastFmBaseURL + albumResult)
 })
 .then(function (data) {
     console.log(data);
+    console.log(data.albums.album);
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
     // dropdown.appendChild(newOption);
