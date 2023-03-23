@@ -27,7 +27,7 @@
         <section id="question2">
             <h1>What's the occassion?</h1>
             <form>
-                <select name="dropdown">
+                <select name="dropdown" id="dropdown">
                     <option value="cleaning">Cleaning</option>
                     <option value="homework">Doing Homework</option>
                     <option value="workout">Work Out</option>
@@ -39,7 +39,7 @@
         <section id="generateActivity">
             <h1>Don't know?<br> Let us choose an activity for you!</h1>
             <!-- Link onclick event when function is created in js-->
-            <button id="boredAPI">Generate Activity</button>
+            <button id="boredAPI" onclick="getActivity()">Generate Activity</button>
         </section>
     </section>
 
