@@ -47,18 +47,18 @@ function getActivity() {
 
 }
 
-// fetch(lastFmBaseURL + albumResult)
-// .then(function (response) {
-//     return response.json();
-// })
-// .then(function (data) {
-//     console.log(data.activity);
-//     console.log(data);
-//     var newOption = document.createElement('option');
-//     newOption.textContent = data.activity;
-//     dropdown.appendChild(newOption);
+fetch(lastFmBaseURL + albumResult)
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+    console.log(data.activity);
+    console.log(data);
+    var newOption = document.createElement('option');
+    newOption.textContent = data.activity;
+    dropdown.appendChild(newOption);
     
-// })
+})
 
 
 // function submitResponse() {
