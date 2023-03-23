@@ -52,7 +52,7 @@ var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
 
 function loadResults() {
-    formPage.removeChild(form);
+    form.remove();
 }
 
 //last.fm fetch tester (ablum)
