@@ -47,6 +47,7 @@ function getActivity() {
 
 }
 
+//last.fm fetch tester
 fetch(lastFmBaseURL + albumResult)
 .then(function (response) {
     return response.json();
