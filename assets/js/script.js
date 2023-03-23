@@ -53,7 +53,6 @@ fetch(lastFmBaseURL + albumResult)
     return response.json();
 })
 .then(function (data) {
-    console.log(data.activity);
     console.log(data);
     var newOption = document.createElement('option');
     newOption.textContent = data.activity;
