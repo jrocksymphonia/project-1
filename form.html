@@ -10,47 +10,43 @@
 </head>
 
 <body>
- <section id="formPage">
-    <section id="form">
+    <section id="formPage">
+        <section id="form">
 
-        <section id="question1">
-            <h1>What would you like to discover today?</h1>
-            <form>
-                <input type="radio" id="artist" name="answer1" value="artist">
-                <label for="artist">Artist</label><br>
-                <input type="radio" id="track" name="answer1" value="track">
-                <label for="track">Track</label>
-                <input type="radio" id="album" name="answer1" value="album">
-                <label for="album">Album</label>
-            </form>
+            <section id="question1">
+                <h1>What would you like to discover today?</h1>
+                <form>
+                    <input type="radio" id="artist" name="answer1" value="artist">
+                    <label for="artist">Artist</label><br>
+                    <input type="radio" id="track" name="answer1" value="track">
+                    <label for="track">Track</label>
+                    <input type="radio" id="album" name="answer1" value="album">
+                    <label for="album">Album</label>
+                </form>
+            </section>
+
+            <section id="question2">
+                <h1>What's the occassion?</h1>
+                <form>
+                    <select name="dropdown" id="dropdown">
+                        <option value="cleaning">Cleaning</option>
+                        <option value="homework">Doing Homework</option>
+                        <option value="workout">Work Out</option>
+                        <option value="carjams">Car Jams</option>
+                    </select>
+                </form>
+            </section>
+
+            <section id="generateActivity">
+                <h1>Don't know?<br> Let us choose an activity for you!</h1>
+                <!-- Link onclick event when function is created in js-->
+                <button id="boredAPI" onclick="getActivity()">Generate Activity</button>
+            </section>
+            <section id="submitScreen">
+                <button id="submitButton" onclick="loadResults()">Submit</button>
+            </section>
         </section>
-
-        <section id="question2">
-            <h1>What's the occassion?</h1>
-            <form>
-                <select name="dropdown" id="dropdown">
-                    <option value="cleaning">Cleaning</option>
-                    <option value="homework">Doing Homework</option>
-                    <option value="workout">Work Out</option>
-                    <option value="carjams">Car Jams</option>
-                </select>
-            </form>
-        </section>
-
-        <section id="generateActivity">
-            <h1>Don't know?<br> Let us choose an activity for you!</h1>
-            <!-- Link onclick event when function is created in js-->
-            <button id="boredAPI" onclick="getActivity()">Generate Activity</button>
-        </section>
-
-
     </section>
-
-    <section id="submitScreen">
-        <button id="submitButton" onclick="loadResults()">Submit</button>
-    </section>
-</section>
-
 </body>
 
 <script src="./assets/js/script.js"></script>
