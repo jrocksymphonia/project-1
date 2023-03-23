@@ -62,7 +62,8 @@ fetch(lastFmBaseURL + albumResult)
 })
 .then(function (data) {
     console.log(data);
-    console.log(data.albums.album);
+    // console.log(data.albums.album);
+
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
     // dropdown.appendChild(newOption);
@@ -89,6 +90,7 @@ fetch(lastFmBaseURL + artistResult)
 })
 .then(function (data) {
     console.log(data);
+    console.log(data.topartists.artist[0].name);
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
     // dropdown.appendChild(newOption);
