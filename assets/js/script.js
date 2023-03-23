@@ -29,6 +29,7 @@ function loadForm() {
     window.location.href = "form.html";
 }
 
+//generate activity via Bored API
 function getActivity() {
     
     fetch(randomActivity)
