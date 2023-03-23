@@ -53,15 +53,17 @@ function loadForm() {
 function getActivity() {
     fetch(randomActivity)
         .then(function (response) {
+
             //We need to break apart the object and randomize it
             return response.json();
         })
         .then(function (data) {
-            for (var i = 0; i < data.length; i++) {
-                var newOption = document.createElement('option');
-                newOption.textContent = data[i].innerHTML;
-                dropdown.appendChild(newOption);
-            }
+            console.log(data.activity);
+            console.log(data);
+            var newOption = document.createElement('option');
+            newOption.textContent = data[i].innerHTML;
+            dropdown.appendChild(newOption);
+
         })
 
 }
