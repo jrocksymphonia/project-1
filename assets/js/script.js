@@ -67,3 +67,9 @@ function getActivity() {
         })
 
 }
+
+var submitButton = document.getElementById("submitButton");
+
+function loadResults(){
+    
+}
