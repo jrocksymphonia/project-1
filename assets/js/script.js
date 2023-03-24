@@ -52,12 +52,17 @@ var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
 var questionOne = document.getElementById("question1");
 
+//Getting second Questions answer
+var questionTwo = document.getElementById('dropdown');
+var questionTwoAnswer = dropdown.options[dropdown.selectedIndex].value;
+ 
+
 
 
 function loadResults() {
     form.remove();
     //Getting the answer to question one to determine which fetch to use
-    var questionOneAnswers = document.getElementsByName('question1');
+    var questionOneAnswers = document.getElementsByName('answer1');
     for (i = 0; i < questionOneAnswers.length; i++) {
         if (questionOneAnswers[i].checked) {
             var questionOneAnswer = questionOneAnswers[i];
