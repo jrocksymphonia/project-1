@@ -11,7 +11,7 @@ var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 //The value is the activity of choice! 
 var artistTag = "exercise";
 var albumTag = "exercise";
-var trackTag = "exercise";
+var trackTag = "busywork";
 
 //Query parameters for our form. Currently set up to look up a specific artist/album/track
 var albumResult = "?method=tag.gettopalbums&tag=" + albumTag + "&limit=1&api_key=" + apiKey + "&format=json";
@@ -40,6 +40,7 @@ function getActivity() {
             console.log(data);
             var newOption = document.createElement('option');
             newOption.textContent = data.activity;
+            newOption.value = data.type;
             dropdown.appendChild(newOption);
 
         })
