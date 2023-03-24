@@ -8,10 +8,14 @@ var randomActivity = "http://www.boredapi.com/api/activity/";
 var lastFmBaseURL = "http://ws.audioscrobbler.com/2.0/";
 var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 
+//Getting second Questions answer
+var questionTwo = document.getElementById('dropdown');
+var questionTwoAnswer = dropdown.options[dropdown.selectedIndex].value;
+
 //The value is the activity of choice! 
-var artistTag = "exercise";
-var albumTag = "exercise";
-var trackTag = "exercise";
+var artistTag = questionTwoAnswer;
+var albumTag = questionTwoAnswer;
+var trackTag = questionTwoAnswer;
 
 //Query parameters for our form. Currently set up to look up a specific artist/album/track
 var albumResult = "?method=tag.gettopalbums&tag=" + albumTag + "&limit=1&api_key=" + apiKey + "&format=json";
@@ -52,10 +56,8 @@ var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
 var questionOne = document.getElementById("question1");
 
-//Getting second Questions answer
-var questionTwo = document.getElementById('dropdown');
-var questionTwoAnswer = dropdown.options[dropdown.selectedIndex].value;
- 
+
+
 
 
 
@@ -70,72 +72,79 @@ function loadResults() {
     }
 
     //Maybe create 3 seperate functions to call inside each of these instead of moving the whole fetch. That way we can also use the users second answer to filter results
-    // if(questionOneAnswer == "Artist"){
-    //Artist fetch
-    // }else if (questionOneAnswer == "Track"){
-    // Track fetch
-    // }else {
-    //Album fetch
-    // }
+    if (questionOneAnswer == "Artist") {
+        artistAPI();
+    } else if (questionOneAnswer == "Track") {
+        songAPI();
+    } else {
+        albumAPI();
+    }
 }
 
-//last.fm fetch tester (ablum)
-fetch(lastFmBaseURL + albumResult)
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    console.log(data);
-    //large image of album art
-    console.log(data.albums.album[0].image[2]);
-    //album name
-    console.log(data.albums.album[0].name);
-    //artist name
-    console.log(data.albums.album[0].artist.name);
-    //url to album
-    console.log(data.albums.album[0].url);
-    
-    // var newOption = document.createElement('option');
-    // newOption.textContent = data.activity;
-    // dropdown.appendChild(newOption);
-})
 
-//last.fm fetch tester (song)
-fetch(lastFmBaseURL + trackResult)
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    console.log(data);
-    //song image
-    console.log(data.tracks.track[0].image[2]);
-    //song name
-    console.log(data.tracks.track[0].name);
-    //artist name
-    console.log(data.tracks.track[0].artist.name);
-    //url to song
-    console.log(data.tracks.track[0].url)
+function albumAPI() {
+    //last.fm fetch tester (ablum)
+    fetch(lastFmBaseURL + albumResult)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            //large image of album art
+            console.log(data.albums.album[0].image[2]);
+            //album name
+            console.log(data.albums.album[0].name);
+            //artist name
+            console.log(data.albums.album[0].artist.name);
+            //url to album
+            console.log(data.albums.album[0].url);
 
-    // var newOption = document.createElement('option');
-    // newOption.textContent = data.activity;
-    // dropdown.appendChild(newOption);
-})
+            // var newOption = document.createElement('option');
+            // newOption.textContent = data.activity;
+            // dropdown.appendChild(newOption);
+        })
+}
 
-//last.fm fetch tester (artist)
-fetch(lastFmBaseURL + artistResult)
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    console.log(data);
-    //artist image
-    console.log(data.topartists.artist[0].image[3]);
-    //artist name
-    console.log(data.topartists.artist[0].name);
-    //url to artist
-    console.log(data.topartists.artist[0].url);
+function songAPI() {
+    //last.fm fetch tester (song)
+    fetch(lastFmBaseURL + trackResult)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            //song image
+            console.log(data.tracks.track[0].image[2]);
+            //song name
+            console.log(data.tracks.track[0].name);
+            //artist name
+            console.log(data.tracks.track[0].artist.name);
+            //url to song
+            console.log(data.tracks.track[0].url)
 
-    // var newOption = document.createElement('option');
-    // newOption.textContent = data.activity;
-    // dropdown.appendChild(newOption);
-})
+            // var newOption = document.createElement('option');
+            // newOption.textContent = data.activity;
+            // dropdown.appendChild(newOption);
+        })
+}
+
+function artistAPI() {
+    //last.fm fetch tester (artist)
+    fetch(lastFmBaseURL + artistResult)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            //artist image
+            console.log(data.topartists.artist[0].image[3]);
+            //artist name
+            console.log(data.topartists.artist[0].name);
+            //url to artist
+            console.log(data.topartists.artist[0].url);
+
+            // var newOption = document.createElement('option');
+            // newOption.textContent = data.activity;
+            // dropdown.appendChild(newOption);
+        })
+}
