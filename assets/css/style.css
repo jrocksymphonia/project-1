@@ -1,8 +1,25 @@
+.backgroundImage {
+    background-image: url('./music 1.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+
+
+}
+
+.mainText {
+
+    color: rgb(255, 197, 255);
+    
+}
 
 
 #homePage {
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
+    padding-left: 440px;
+    padding-right: 440px;
     font-family: 'Tilt Neon', cursive;
     font-size: 20px;
 
@@ -12,40 +29,50 @@
 
 
 
-#startButton {
+.startButton {
     
-    border: 1px solid #3498db;
-    background: none;
-    padding: 10px 20px;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    color: rgba(232, 102, 236, 1);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
-    margin: 15px;
-    transition: 0.8s;
-    
+    background-color: transparent;
+    border: 2px solid white;
+   
+
+    }
+
+.largeButton {
+    margin-top: 50px;
+    padding: 25px;
+}
+      
+.startButton:hover {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+    background-image: linear-gradient(
+    rgba(232, 102, 236, 0.3) 0%,
+    rgba(232, 102, 236, 0.6) 100%);
+    color: aqua;
+  
+}
+
+#container {
+    margin-top: 90px;
+    text-align: center;
+    font-size: 35px;
 
 }
 
 
 
-#startButton:hover {
-    color:blue; 
 
-}
 
-#startButton::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 0%;
-    background: #3498db;
-    z-index: -1;
-    transition: 0.8s;
 
-}
+
+
 
 footer {
     position: absolute;
     bottom: 0;
+    color: aliceblue;
 }
