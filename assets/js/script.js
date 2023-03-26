@@ -24,7 +24,7 @@ var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&limit=1&api_key
 
 
 //------------------------------------------------------------------------------------------------------------------
-var dropdown = document.getElementById("dropdown");
+
 var startButton = document.getElementById("startButton");
 
 function loadForm() {
@@ -43,8 +43,42 @@ function getActivity() {
             console.log(data.activity);
             console.log(data);
             var newOption = document.createElement('option');
+            var dropdown = document.getElementById("dropdown");
             newOption.textContent = data.activity;
             dropdown.appendChild(newOption);
+            switch (data.type) {
+                case 'education':
+                    newOption.type = "instrumental";
+                    break;
+                case 'recreational':
+                    newOption.type = "pop";
+                    break;
+                case 'social':
+                    newOption.type = "House";
+                    break;
+                case 'diy':
+                    newOption.type = "pop";
+                    break;
+                case 'charity':
+                    newOption.type = "90s";
+                    break;
+                case 'cooking':
+                    newOption.type = "soul";
+                    break;
+                case 'relaxation':
+                    newOption.type = "chillout";
+                    break;
+                case 'music':
+                    newOption.type = "new wave";
+                    break;
+                case 'busywork':
+                    newOption.type = "ambient";
+                    break;
+                default:
+                    return;
+
+            }
+            console.log(newOption.type);
 
         })
 
@@ -55,8 +89,7 @@ var submitButton = document.getElementById("submitButton");
 var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
 var questionOne = document.getElementById("question1");
-
-
+var container = document.getElementById("container");
 
 
 
