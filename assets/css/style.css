@@ -2,18 +2,12 @@
     background-image: url('./music 1.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-
-
-
 }
 
 .mainText {
-
     color: rgb(255, 197, 255);
-    
+    font-family: 'Tilt Neon', cursive;
 }
-
 
 #homePage {
     text-align: center;
@@ -22,25 +16,18 @@
     padding-right: 440px;
     font-family: 'Tilt Neon', cursive;
     font-size: 20px;
-
-    
 }
 
-
-
-
 .startButton {
-    
     font-size: 30px;
+    text-align: center;
     color: rgba(232, 102, 236, 1);
     border-radius: 10px;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     background-color: transparent;
     border: 2px solid white;
-   
-
-    }
+}
 
 .largeButton {
     margin-top: 50px;
@@ -53,26 +40,19 @@
     rgba(232, 102, 236, 0.3) 0%,
     rgba(232, 102, 236, 0.6) 100%);
     color: aqua;
-  
 }
 
 #container {
     margin-top: 90px;
     text-align: center;
     font-size: 35px;
-
 }
 
-
-
-
-
-
-
-
-
 footer {
-    position: absolute;
     bottom: 0;
     color: aliceblue;
+}
+
+.absolute {
+    position: absolute;
 }
