@@ -125,10 +125,14 @@ fetch(lastFmBaseURL + trackResult)
 
     //artist name
     console.log(data.tracks.track[0].artist.name);
+    var songArtist = document.createElement('h2');
+    songArtist.textContent = data.tracks.track[0].artist.name;
+    document.getElementById('container').appendChild(songArtist);
 
-    
     //url to song
     console.log(data.tracks.track[0].url)
+    var songUrl = document.createElement('button');
+    songUrl
 
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
