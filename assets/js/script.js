@@ -44,7 +44,40 @@ function getActivity() {
             console.log(data);
             var newOption = document.createElement('option');
             newOption.textContent = data.activity;
+            switch (newOption.value) {
+                case 'education':
+                    newOption.setAttribute('value', 'instrumental');
+                    break;
+                case 'recreational':
+                    newOption.setAttribute('value', 'pop');
+                    break;
+                case 'social':
+                    newOption.setAttribute('value', 'House');
+                    break;
+                case 'diy':
+                    newOption.setAttribute('value', 'pop');
+                    break;
+                case 'charity':
+                    newOption.setAttribute('value', '90s');
+                    break;
+                case 'cooking':
+                    newOption.setAttribute('value', 'soul');
+                    break;
+                case 'relaxation':
+                    newOption.setAttribute('value', 'chillout');
+                    break;
+                case 'music':
+                    newOption.setAttribute('value', 'new wave');
+                    break;
+                case 'busywork':
+                    newOption.setAttribute('value', 'ambient');
+                    break;
+                default:
+                    newOption.setAttribute('value', 'new wave');
+
+            }
             dropdown.appendChild(newOption);
+            console.log(newOption);
 
         })
 
@@ -55,7 +88,6 @@ var submitButton = document.getElementById("submitButton");
 var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
 var questionOne = document.getElementById("question1");
-
 
 
 
