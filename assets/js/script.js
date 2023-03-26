@@ -73,9 +73,11 @@ function getActivity() {
                     newOption.setAttribute('value', 'ambient');
                     break;
                 default:
+                    newOption.setAttribute('value', 'new wave');
 
             }
             dropdown.appendChild(newOption);
+            console.log(newOption);
 
         })
 
@@ -88,7 +90,6 @@ var form = document.getElementById("form");
 var questionOne = document.getElementById("question1");
 
 
-console.log()
 
 
 
