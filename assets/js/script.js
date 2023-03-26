@@ -11,7 +11,7 @@ var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 //The value is the activity of choice! 
 var artistTag = "exercise";
 var albumTag = "exercise";
-var trackTag = "busywork";
+var trackTag = "exercise";
 
 //Query parameters for our form. Currently set up to look up a specific artist/album/track
 var albumResult = "?method=tag.gettopalbums&tag=" + albumTag + "&limit=1&api_key=" + apiKey + "&format=json";
@@ -86,15 +86,14 @@ fetch(lastFmBaseURL + albumResult)
     return response.json();
 })
 .then(function (data) {
-    console.log(data);
     //large image of album art
-    console.log(data.albums.album[0].image[2]);
+    // console.log(data.albums.album[0].image[2]);
     //album name
-    console.log(data.albums.album[0].name);
+    // console.log(data.albums.album[0].name);
     //artist name
-    console.log(data.albums.album[0].artist.name);
+    // console.log(data.albums.album[0].artist.name);
     //url to album
-    console.log(data.albums.album[0].url);
+    // console.log(data.albums.album[0].url);
     
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
@@ -107,9 +106,17 @@ fetch(lastFmBaseURL + trackResult)
     return response.json();
 })
 .then(function (data) {
-    console.log(data);
     //song image
-    console.log(data.tracks.track[0].image[2]);
+    // console.log(data.tracks.track[0].image[2]);
+    imgSource = data.tracks.track[0].image[2];
+
+    var songImage = document.createElement("img");
+
+    img.src = imgSource;
+    img.alt = 'image description';
+
+    document.getElementById('container').appendChild(songImage);
+
     //song name
     console.log(data.tracks.track[0].name);
     //artist name
@@ -128,13 +135,12 @@ fetch(lastFmBaseURL + artistResult)
     return response.json();
 })
 .then(function (data) {
-    console.log(data);
     //artist image
-    console.log(data.topartists.artist[0].image[3]);
+    // console.log(data.topartists.artist[0].image[3]);
     //artist name
-    console.log(data.topartists.artist[0].name);
+    // console.log(data.topartists.artist[0].name);
     //url to artist
-    console.log(data.topartists.artist[0].url);
+    // console.log(data.topartists.artist[0].url);
 
     // var newOption = document.createElement('option');
     // newOption.textContent = data.activity;
