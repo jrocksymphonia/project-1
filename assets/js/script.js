@@ -88,8 +88,15 @@ fetch(lastFmBaseURL + albumResult)
 .then(function (data) {
     //large image of album art
     // console.log(data.albums.album[0].image[2]);
+    var albumImage = document.createElement("img");
+    albumImage.src = data.albums.album[0].image[3]["#text"];
+    albumImage.alt = data.albums.album[0].image[3].name;
+    document.getElementById('container').appendChild(albumImage);
+
     //album name
     // console.log(data.albums.album[0].name);
+
+    
     //artist name
     // console.log(data.albums.album[0].artist.name);
     //url to album
@@ -107,36 +114,28 @@ fetch(lastFmBaseURL + trackResult)
 })
 .then(function (data) {
     //song image
-    // console.log(data.tracks.track[0].image[2]);
-    imgSource = data.tracks.track[0].image[2];
-
+    //console.log(data.tracks.track[0].image[3]);
     var songImage = document.createElement("img");
-
-    img.src = imgSource;
-    img.alt = 'image description';
-
+    songImage.src = data.tracks.track[0].image[3]["#text"];
+    songImage.alt = data.tracks.track[0].image[3].name;
     document.getElementById('container').appendChild(songImage);
 
     //song name
-    console.log(data.tracks.track[0].name);
+    // console.log(data.tracks.track[0].name);
     var songName = document.createElement('h1');
     songName.textContent = data.tracks.track[0].name;
     document.getElementById('container').appendChild(songName);
 
     //artist name
-    console.log(data.tracks.track[0].artist.name);
+    // console.log(data.tracks.track[0].artist.name);
     var songArtist = document.createElement('h2');
     songArtist.textContent = data.tracks.track[0].artist.name;
     document.getElementById('container').appendChild(songArtist);
 
     //url to song
-    console.log(data.tracks.track[0].url)
-    var songUrl = document.createElement('button');
-    songUrl
-
-    // var newOption = document.createElement('option');
-    // newOption.textContent = data.activity;
-    // dropdown.appendChild(newOption);
+    // console.log(data.tracks.track[0].url)
+    // var songUrl = document.createElement('button');
+    // songUrl
 })
 
 //last.fm fetch tester (artist)
@@ -148,7 +147,10 @@ fetch(lastFmBaseURL + artistResult)
     //artist image
     // console.log(data.topartists.artist[0].image[3]);
     //artist name
-    // console.log(data.topartists.artist[0].name);
+    console.log(data.topartists.artist[0].name);
+    var artist = document.createElement('h1');
+    artist.textContent = data.topartists.artist[0].name;
+    document.getElementById('container').appendChild(artist);
     //url to artist
     // console.log(data.topartists.artist[0].url);
 
