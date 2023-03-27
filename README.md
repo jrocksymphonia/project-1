@@ -14,7 +14,7 @@ N/A
 
 
 
-Link to the live page here: 
+Link to the live page here: https://jrocksymphonia.github.io/project-1/
 
 
 ## Credits
