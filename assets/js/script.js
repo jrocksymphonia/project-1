@@ -45,6 +45,7 @@ function getActivity() {
             var newOption = document.createElement('option');
             var dropdown = document.getElementById("dropdown");
             newOption.textContent = data.activity;
+            newOption.value = data.type;
             dropdown.appendChild(newOption);
             switch (data.type) {
                 case 'education':
@@ -114,61 +115,85 @@ function loadResults() {
     }
 }
 
+//last.fm fetch (ablum)
+fetch(lastFmBaseURL + albumResult)
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+    //append all of these items!
 
-function albumAPI() {
-    //last.fm fetch tester (ablum)
-    fetch(lastFmBaseURL + albumResult)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            //large image of album art
-            console.log(data.albums.album[0].image[2]);
-            //album name
-            console.log(data.albums.album[0].name);
-            //artist name
-            console.log(data.albums.album[0].artist.name);
-            //url to album
-            console.log(data.albums.album[0].url);
+    //large image of album art
+    // console.log(data.albums.album[0].image[2]);
+    var albumImage = document.createElement("img");
+    albumImage.src = data.albums.album[0].image[3]["#text"];
+    albumImage.alt = data.albums.album[0].image[3].name;
+    document.getElementById('container').appendChild(albumImage);
 
-            // var newOption = document.createElement('option');
-            // newOption.textContent = data.activity;
-            // dropdown.appendChild(newOption);
-        })
-}
+    //album name
+    // console.log(data.albums.album[0].name);
+    var albumName = document.createElement('h1');
+    albumName.textContent = data.albums.album[0].name;
+    document.getElementById('container').appendChild(albumName);
+    
+    //artist name
+    // console.log(data.albums.album[0].artist.name);
+    var artist = document.createElement('h3');
+    artist.textContent = data.albums.album[0].artist.name;
+    document.getElementById('container').appendChild(artist);
+
+    //url to album
+    // console.log(data.albums.album[0].url);
+    var albumUrl = document.createElement('a');
+    albumUrl.href = data.albums.album[0].url;
+    albumUrl.textContent = "Check it out on last.fm";
+    document.getElementById('container').appendChild(albumUrl);
+
+})
 
 function songAPI() {
-    //last.fm fetch tester (song)
+    //last.fm fetch (song)
     fetch(lastFmBaseURL + trackResult)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             //song image
-            console.log(data.tracks.track[0].image[2]);
-            //song name
-            console.log(data.tracks.track[0].name);
-            //artist name
-            console.log(data.tracks.track[0].artist.name);
-            //url to song
-            console.log(data.tracks.track[0].url)
+            //console.log(data.tracks.track[0].image[3]);
+            var songImage = document.createElement("img");
+            songImage.src = data.tracks.track[0].image[3]["#text"];
+            songImage.alt = data.tracks.track[0].image[3].name;
+            document.getElementById('container').appendChild(songImage);
 
-            // var newOption = document.createElement('option');
-            // newOption.textContent = data.activity;
-            // dropdown.appendChild(newOption);
+            //song name
+            // console.log(data.tracks.track[0].name);
+            var songName = document.createElement('h1');
+            songName.textContent = data.tracks.track[0].name;
+            document.getElementById('container').appendChild(songName);
+
+            //artist name
+            // console.log(data.tracks.track[0].artist.name);
+            var songArtist = document.createElement('h3');
+            songArtist.textContent = data.tracks.track[0].artist.name;
+            document.getElementById('container').appendChild(songArtist);
+
+            //url to song
+            // console.log(data.tracks.track[0].url)
+            var songUrl = document.createElement('a');
+            songUrl.href = data.tracks.track[0].url;
+            songUrl.textContent = "Check it out on last.fm";
+            document.getElementById('container').appendChild(songUrl);
+
         })
 }
 
 function artistAPI() {
-    //last.fm fetch tester (artist)
+    //last.fm fetch (artist)
     fetch(lastFmBaseURL + artistResult)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             //artist image
             //console.log(data.topartists.artist[0].image[3]);
             var artistImage = document.createElement("img");
@@ -181,15 +206,12 @@ function artistAPI() {
             artistName.textContent = data.topartists.artist[0].name;
             document.getElementById('container').appendChild(artistName);
 
+
             //url to artist
-            //console.log(data.topartists.artist[0].url);
+            // console.log(data.topartists.artist[0].url);
             var artistUrl = document.createElement('a');
             artistUrl.href = data.topartists.artist[0].url;
-            songUrl.textContent = "Check it out on last.fm";
-            document.getElementById('container').appendChild(songUrl);
-
-            // var newOption = document.createElement('option');
-            // newOption.textContent = data.activity;
-            // dropdown.appendChild(newOption);
+            artistUrl.textContent = "Check it out on last.fm";
+            document.getElementById('container').appendChild(artistUrl);
         })
 }
