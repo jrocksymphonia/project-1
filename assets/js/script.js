@@ -115,41 +115,43 @@ function loadResults() {
     }
 }
 
-//last.fm fetch (ablum)
-fetch(lastFmBaseURL + albumResult)
-.then(function (response) {
-    return response.json();
-})
-.then(function (data) {
-    //append all of these items!
+function albumAPI() {
+    //last.fm fetch (ablum)
+    fetch(lastFmBaseURL + albumResult)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        //append all of these items!
 
-    //large image of album art
-    // console.log(data.albums.album[0].image[2]);
-    var albumImage = document.createElement("img");
-    albumImage.src = data.albums.album[0].image[3]["#text"];
-    albumImage.alt = data.albums.album[0].image[3].name;
-    document.getElementById('container').appendChild(albumImage);
+        //large image of album art
+        // console.log(data.albums.album[0].image[2]);
+        var albumImage = document.createElement("img");
+        albumImage.src = data.albums.album[0].image[3]["#text"];
+        albumImage.alt = data.albums.album[0].image[3].name;
+        document.getElementById('container').appendChild(albumImage);
 
-    //album name
-    // console.log(data.albums.album[0].name);
-    var albumName = document.createElement('h1');
-    albumName.textContent = data.albums.album[0].name;
-    document.getElementById('container').appendChild(albumName);
-    
-    //artist name
-    // console.log(data.albums.album[0].artist.name);
-    var artist = document.createElement('h3');
-    artist.textContent = data.albums.album[0].artist.name;
-    document.getElementById('container').appendChild(artist);
+        //album name
+        // console.log(data.albums.album[0].name);
+        var albumName = document.createElement('h1');
+        albumName.textContent = data.albums.album[0].name;
+        document.getElementById('container').appendChild(albumName);
+        
+        //artist name
+        // console.log(data.albums.album[0].artist.name);
+        var artist = document.createElement('h3');
+        artist.textContent = data.albums.album[0].artist.name;
+        document.getElementById('container').appendChild(artist);
 
-    //url to album
-    // console.log(data.albums.album[0].url);
-    var albumUrl = document.createElement('a');
-    albumUrl.href = data.albums.album[0].url;
-    albumUrl.textContent = "Check it out on last.fm";
-    document.getElementById('container').appendChild(albumUrl);
+        //url to album
+        // console.log(data.albums.album[0].url);
+        var albumUrl = document.createElement('a');
+        albumUrl.href = data.albums.album[0].url;
+        albumUrl.textContent = "Check it out on last.fm";
+        document.getElementById('container').appendChild(albumUrl);
 
-})
+    })
+}
 
 function songAPI() {
     //last.fm fetch (song)
