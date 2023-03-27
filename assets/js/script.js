@@ -9,18 +9,8 @@ var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 
 //Getting second Questions answer
 var questionTwo = document.getElementById('dropdown');
-var questionTwoAnswer = questionTwo.options[questionTwo.selectedIndex].value;
 
 
-//The value  of these three equals the activity of choice! 
-var artistTag = questionTwoAnswer;
-var albumTag = questionTwoAnswer;
-var trackTag = questionTwoAnswer;
-
-//Query parameters for our form. Currently set up to look up a specific artist/album/track
-var albumResult = "?method=tag.gettopalbums&tag=" + albumTag + "&limit=1&api_key=" + apiKey + "&format=json";
-var artistResult = "?method=tag.gettopartists&tag=" + artistTag + "&limit=1&api_key=" + apiKey + "&format=json";
-var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&limit=1&api_key=" + apiKey + "&format=json";
 
 
 //------------------------------------------------------------------------------------------------------------------
@@ -104,27 +94,40 @@ function loadResults() {
             var questionOneAnswer = questionOneAnswers[i].value;
         }
     }
+    var questionTwoAnswer = questionTwo.options[questionTwo.selectedIndex].value;
 
     console.log(questionOneAnswer);
+    //The value  of these three equals the activity of choice! 
+    var artistTag = questionTwoAnswer;
+    var albumTag = questionTwoAnswer;
+    var trackTag = questionTwoAnswer;
+    console.log(artistTag);
+    //Query parameters for our form. Currently set up to look up a specific artist/album/track
+    var albumResult = "?method=tag.gettopalbums&tag=" + albumTag + "&limit=1&api_key=" + apiKey + "&format=json";
+    var artistResult = "?method=tag.gettopartists&tag=" + artistTag + "&limit=1&api_key=" + apiKey + "&format=json";
+    var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&limit=1&api_key=" + apiKey + "&format=json";
+
     //Create 3 seperate functions to call inside each of these instead of moving the whole fetch. 
     //That way we can also use the users second answer to filter results
     if (questionOneAnswer == "artist") {
-        artistAPI();
+        artistAPI(artistResult);
         console.log("Artist");
     } else if (questionOneAnswer == "track") {
-        songAPI();
+        songAPI(trackResult);
         console.log("Track");
 
     } else {
-        albumAPI();
+        albumAPI(albumResult);
         console.log("Album");
     }
+
+
     form.remove();
 }
 
 
 //last.fm fetch (ablum)
-function albumAPI() {
+function albumAPI(albumResult) {
     fetch(lastFmBaseURL + albumResult)
         .then(function (response) {
             return response.json();
@@ -160,7 +163,7 @@ function albumAPI() {
 
         })
 }
-function songAPI() {
+function songAPI(trackResult) {
     //last.fm fetch (song)
     fetch(lastFmBaseURL + trackResult)
         .then(function (response) {
@@ -196,7 +199,7 @@ function songAPI() {
         })
 }
 
-function artistAPI() {
+function artistAPI(artistResult) {
     //last.fm fetch (artist)
     fetch(lastFmBaseURL + artistResult)
         .then(function (response) {
