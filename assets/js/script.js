@@ -170,14 +170,23 @@ function artistAPI() {
         .then(function (data) {
             console.log(data);
             //artist image
-            console.log(data.topartists.artist[0].image[3]);
+            //console.log(data.topartists.artist[0].image[3]);
+            var artistImage = document.createElement("img");
+            artistImage.src = data.topartists.artist[0].image[3]["#text"];
+            artistImage.alt = data.topartists.artist[0].image[3].name;
+            document.getElementById('container').appendChild(artistImage);
+
             //artist name
             var artistName = document.createElement('h1');
             artistName.textContent = data.topartists.artist[0].name;
             document.getElementById('container').appendChild(artistName);
 
             //url to artist
-            console.log(data.topartists.artist[0].url);
+            //console.log(data.topartists.artist[0].url);
+            var artistUrl = document.createElement('a');
+            artistUrl.href = data.topartists.artist[0].url;
+            songUrl.textContent = "Check it out on last.fm";
+            document.getElementById('container').appendChild(songUrl);
 
             // var newOption = document.createElement('option');
             // newOption.textContent = data.activity;
