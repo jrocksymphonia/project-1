@@ -80,12 +80,14 @@ function loadResults() {
     // }
 }
 
-//last.fm fetch tester (ablum)
+//last.fm fetch (ablum)
 fetch(lastFmBaseURL + albumResult)
 .then(function (response) {
     return response.json();
 })
 .then(function (data) {
+    //append all of these items!
+
     //large image of album art
     // console.log(data.albums.album[0].image[2]);
     var albumImage = document.createElement("img");
@@ -101,15 +103,20 @@ fetch(lastFmBaseURL + albumResult)
     
     //artist name
     // console.log(data.albums.album[0].artist.name);
+    var artist = document.createElement('h3');
+    artist.textContent = data.albums.album[0].artist.name;
+    document.getElementById('container').appendChild(artist);
+
     //url to album
     // console.log(data.albums.album[0].url);
+    var albumUrl = document.createElement('a');
+    albumUrl.href = data.albums.album[0].url;
+    albumUrl.textContent = "Check it out on last.fm";
+    document.getElementById('container').appendChild(albumUrl);
     
-    // var newOption = document.createElement('option');
-    // newOption.textContent = data.activity;
-    // dropdown.appendChild(newOption);
 })
 
-//last.fm fetch tester (song)
+//last.fm fetch (song)
 fetch(lastFmBaseURL + trackResult)
 .then(function (response) {
     return response.json();
@@ -130,33 +137,42 @@ fetch(lastFmBaseURL + trackResult)
 
     //artist name
     // console.log(data.tracks.track[0].artist.name);
-    var songArtist = document.createElement('h2');
+    var songArtist = document.createElement('h3');
     songArtist.textContent = data.tracks.track[0].artist.name;
     document.getElementById('container').appendChild(songArtist);
 
     //url to song
     // console.log(data.tracks.track[0].url)
-    // var songUrl = document.createElement('button');
-    // songUrl
+    var songUrl = document.createElement('a');
+    songUrl.href = data.tracks.track[0].url;
+    songUrl.textContent = "Check it out on last.fm";
+    document.getElementById('container').appendChild(songUrl);
+
 })
 
-//last.fm fetch tester (artist)
+//last.fm fetch (artist)
 fetch(lastFmBaseURL + artistResult)
 .then(function (response) {
     return response.json();
 })
 .then(function (data) {
     //artist image
-    // console.log(data.topartists.artist[0].image[3]);
+    // console.log(data.topartists.artist[0]);
+    var artistImage = document.createElement("img");
+    artistImage.src = data.topartists.artist[0].image[3]["#text"];
+    artistImage.alt = data.topartists.artist[0].image[3].name;
+    document.getElementById('container').appendChild(artistImage);
+
     //artist name
-    console.log(data.topartists.artist[0].name);
+    // console.log(data.topartists.artist[0].name);
     var artist = document.createElement('h1');
     artist.textContent = data.topartists.artist[0].name;
     document.getElementById('container').appendChild(artist);
+
     //url to artist
     // console.log(data.topartists.artist[0].url);
-
-    // var newOption = document.createElement('option');
-    // newOption.textContent = data.activity;
-    // dropdown.appendChild(newOption);
+    var artistUrl = document.createElement('a');
+    artistUrl.href = data.topartists.artist[0].url;
+    artistUrl.textContent = "Check it out on last.fm";
+    document.getElementById('container').appendChild(artistUrl);
 })
