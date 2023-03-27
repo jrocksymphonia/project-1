@@ -1,4 +1,3 @@
-
 //Capturing the two 3rd-party APIs we'll be using
 
 //Bored API giving us a randomized event 
@@ -12,7 +11,7 @@ var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 var questionTwo = document.getElementById('dropdown');
 var questionTwoAnswer = dropdown.options[dropdown.selectedIndex].value;
 
-//The value is the activity of choice! 
+//The value  of these three equals the activity of choice! 
 var artistTag = questionTwoAnswer;
 var albumTag = questionTwoAnswer;
 var trackTag = questionTwoAnswer;
@@ -25,18 +24,20 @@ var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&limit=1&api_key
 
 //------------------------------------------------------------------------------------------------------------------
 
+//start-page (index.html) code-------
 var startButton = document.getElementById("startButton");
 
 function loadForm() {
     window.location.href = "form.html";
 }
 
+//form page (form.html) code----------
+
 //generate activity via Bored API
 function getActivity() {
 
     fetch(randomActivity)
         .then(function (response) {
-            //We need to break apart the object and randomize it
             return response.json();
         })
         .then(function (data) {
@@ -85,17 +86,16 @@ function getActivity() {
 
 }
 
-
+//form.html variables
 var submitButton = document.getElementById("submitButton");
 var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
 var questionOne = document.getElementById("question1");
 var container = document.getElementById("container");
 
-
-
-
+//the submit button to load results:
 function loadResults() {
+    //remove the form
     form.remove();
     //Getting the answer to question one to determine which fetch to use
     var questionOneAnswers = document.getElementsByName('answer1');
@@ -105,7 +105,8 @@ function loadResults() {
         }
     }
 
-    //Maybe create 3 seperate functions to call inside each of these instead of moving the whole fetch. That way we can also use the users second answer to filter results
+    //Create 3 seperate functions to call inside each of these instead of moving the whole fetch. 
+    //That way we can also use the users second answer to filter results
     if (questionOneAnswer == "Artist") {
         artistAPI();
     } else if (questionOneAnswer == "Track") {
@@ -115,6 +116,7 @@ function loadResults() {
     }
 }
 
+//the three functions that load the results for each answer------
 function albumAPI() {
     //last.fm fetch (ablum)
     fetch(lastFmBaseURL + albumResult)
