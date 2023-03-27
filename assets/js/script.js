@@ -109,14 +109,14 @@ function loadResults() {
     //Create 3 seperate functions to call inside each of these instead of moving the whole fetch. 
     //That way we can also use the users second answer to filter results
     if (questionOneAnswer == "artist") {
-        //artistAPI();
+        artistAPI();
         console.log("Artist");
     } else if (questionOneAnswer == "track") {
-        // songAPI();
+        songAPI();
         console.log("Track");
 
     } else {
-        // albumAPI();
+        albumAPI();
         console.log("Album");
     }
     form.remove();
