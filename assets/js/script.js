@@ -184,7 +184,8 @@ function songAPI() {
             songUrl.textContent = "Check it out on last.fm";
             document.getElementById('container').appendChild(songUrl);
 
-})
+    })
+}
 
 function artistAPI() {
     //last.fm fetch (artist)
