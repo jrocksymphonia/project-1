@@ -1,7 +1,7 @@
 # Project 1: Mystery Melody
 
 ## Description
-This project is 
+Introducing a new way to enhance your daily routine with music! Our website takes your choice of activity and suggests the perfect artist, album, or song to listen to while you're doing it. Whether you're going for a run, cooking dinner, or just hanging out at home, we'll provide the perfect soundtrack to complement your experience. And if you're feeling indecisive, we'll generate an activity and a song artist or album for you to try out. Say goodbye to mindlessly scrolling through your music library and hello to a personalized and enjoyable experience with every activity. Try it out now and feel the difference music can make!
 
 ## Installation
 
