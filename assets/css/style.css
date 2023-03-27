@@ -48,6 +48,37 @@
     font-size: 35px;
 }
 
+h1 {
+    text-align: center;
+    color: rgb(255, 197, 255);
+    font-family: 'Tilt Neon', cursive;
+}
+    
+h3 {
+    text-align: center;
+    color: rgb(255, 197, 255);
+    font-family: 'Tilt Neon', cursive;
+}
+
+a {
+    font-size: 30px;
+    text-align: center;
+    color: rgba(232, 102, 236, 1);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+a:hover {
+    box-shadow: inset 0px 0px 8px rgba(232, 102, 236, 1), 0 0 15px rgba(232, 102, 236, 1);
+    background-image: linear-gradient(
+    rgba(232, 102, 236, 0.3) 0%,
+    rgba(232, 102, 236, 0.6) 100%);
+    color: aqua;
+}
+
 footer {
     bottom: 0;
     color: aliceblue;
