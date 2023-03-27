@@ -1,4 +1,3 @@
-
 //Capturing the two 3rd-party APIs we'll be using
 
 //Bored API giving us a randomized event 
@@ -13,7 +12,7 @@ var questionTwo = document.getElementById('dropdown');
 var questionTwoAnswer = questionTwo.options[questionTwo.selectedIndex].value;
 
 
-//The value is the activity of choice! 
+//The value  of these three equals the activity of choice! 
 var artistTag = questionTwoAnswer;
 var albumTag = questionTwoAnswer;
 var trackTag = questionTwoAnswer;
@@ -26,18 +25,20 @@ var trackResult = "?method=tag.gettoptracks&tag=" + trackTag + "&limit=1&api_key
 
 //------------------------------------------------------------------------------------------------------------------
 
+//start-page (index.html) code-------
 var startButton = document.getElementById("startButton");
 
 function loadForm() {
     window.location.href = "form.html";
 }
 
+//form page (form.html) code----------
+
 //generate activity via Bored API
 function getActivity() {
 
     fetch(randomActivity)
         .then(function (response) {
-            //We need to break apart the object and randomize it
             return response.json();
         })
         .then(function (data) {
@@ -86,16 +87,14 @@ function getActivity() {
 
 }
 
-
+//form.html variables
 var submitButton = document.getElementById("submitButton");
 var formPage = document.getElementById("formPage");
 var form = document.getElementById("form");
 var questionOne = document.getElementById("question1");
 var container = document.getElementById("container");
 
-
-
-
+//the submit button to load results:
 function loadResults() {
 
     //Getting the answer to question one to determine which fetch to use
@@ -105,20 +104,24 @@ function loadResults() {
             var questionOneAnswer = questionOneAnswers[i].value;
         }
     }
+
     console.log(questionOneAnswer);
-    //Maybe create 3 seperate functions to call inside each of these instead of moving the whole fetch. That way we can also use the users second answer to filter results
+    //Create 3 seperate functions to call inside each of these instead of moving the whole fetch. 
+    //That way we can also use the users second answer to filter results
     if (questionOneAnswer == "artist") {
         //artistAPI();
         console.log("Artist");
     } else if (questionOneAnswer == "track") {
         // songAPI();
         console.log("Track");
+
     } else {
         // albumAPI();
         console.log("Album");
     }
     form.remove();
 }
+
 
 //last.fm fetch (ablum)
 function albumAPI() {
@@ -201,17 +204,17 @@ function artistAPI() {
         })
         .then(function (data) {
             //artist image
-            // console.log(data.topartists.artist[0]);
+            //console.log(data.topartists.artist[0].image[3]);
             var artistImage = document.createElement("img");
             artistImage.src = data.topartists.artist[0].image[3]["#text"];
             artistImage.alt = data.topartists.artist[0].image[3].name;
             document.getElementById('container').appendChild(artistImage);
 
             //artist name
-            // console.log(data.topartists.artist[0].name);
-            var artist = document.createElement('h1');
-            artist.textContent = data.topartists.artist[0].name;
-            document.getElementById('container').appendChild(artist);
+            var artistName = document.createElement('h1');
+            artistName.textContent = data.topartists.artist[0].name;
+            document.getElementById('container').appendChild(artistName);
+
 
             //url to artist
             // console.log(data.topartists.artist[0].url);
