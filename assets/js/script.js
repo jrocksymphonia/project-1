@@ -95,7 +95,9 @@ fetch(lastFmBaseURL + albumResult)
 
     //album name
     // console.log(data.albums.album[0].name);
-
+    var albumName = document.createElement('h1');
+    albumName.textContent = data.albums.album[0].name;
+    document.getElementById('container').appendChild(albumName);
     
     //artist name
     // console.log(data.albums.album[0].artist.name);
