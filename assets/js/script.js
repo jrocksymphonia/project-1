@@ -172,7 +172,10 @@ function artistAPI() {
             //artist image
             console.log(data.topartists.artist[0].image[3]);
             //artist name
-            console.log(data.topartists.artist[0].name);
+            var artistName = document.createElement('h1');
+            artistName.textContent = data.topartists.artist[0].name;
+            document.getElementById('container').appendChild(artistName);
+
             //url to artist
             console.log(data.topartists.artist[0].url);
 
