@@ -9,7 +9,8 @@ var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 
 //Getting second Questions answer
 var questionTwo = document.getElementById('dropdown');
-var questionTwoAnswer = dropdown.options[dropdown.selectedIndex].value;
+var questionTwoAnswer = questionTwo.options[questionTwo.selectedIndex].value;
+
 
 //The value  of these three equals the activity of choice! 
 var artistTag = questionTwoAnswer;
@@ -95,66 +96,70 @@ var container = document.getElementById("container");
 
 //the submit button to load results:
 function loadResults() {
-    //remove the form
-    form.remove();
+
     //Getting the answer to question one to determine which fetch to use
     var questionOneAnswers = document.getElementsByName('answer1');
     for (i = 0; i < questionOneAnswers.length; i++) {
         if (questionOneAnswers[i].checked) {
-            var questionOneAnswer = questionOneAnswers[i];
+            var questionOneAnswer = questionOneAnswers[i].value;
         }
     }
 
+    console.log(questionOneAnswer);
     //Create 3 seperate functions to call inside each of these instead of moving the whole fetch. 
     //That way we can also use the users second answer to filter results
-    if (questionOneAnswer == "Artist") {
-        artistAPI();
-    } else if (questionOneAnswer == "Track") {
-        songAPI();
+    if (questionOneAnswer == "artist") {
+        //artistAPI();
+        console.log("Artist");
+    } else if (questionOneAnswer == "track") {
+        // songAPI();
+        console.log("Track");
+
     } else {
-        albumAPI();
+        // albumAPI();
+        console.log("Album");
     }
+    form.remove();
 }
 
-//the three functions that load the results for each answer------
+
+//last.fm fetch (ablum)
 function albumAPI() {
-    //last.fm fetch (ablum)
     fetch(lastFmBaseURL + albumResult)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        //append all of these items!
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            //append all of these items!
 
-        //large image of album art
-        // console.log(data.albums.album[0].image[2]);
-        var albumImage = document.createElement("img");
-        albumImage.src = data.albums.album[0].image[3]["#text"];
-        albumImage.alt = data.albums.album[0].image[3].name;
-        document.getElementById('container').appendChild(albumImage);
+            //large image of album art
+            // console.log(data.albums.album[0].image[2]);
+            var albumImage = document.createElement("img");
+            albumImage.src = data.albums.album[0].image[3]["#text"];
+            albumImage.alt = data.albums.album[0].image[3].name;
+            document.getElementById('container').appendChild(albumImage);
 
-        //album name
-        // console.log(data.albums.album[0].name);
-        var albumName = document.createElement('h1');
-        albumName.textContent = data.albums.album[0].name;
-        document.getElementById('container').appendChild(albumName);
-        
-        //artist name
-        // console.log(data.albums.album[0].artist.name);
-        var artist = document.createElement('h3');
-        artist.textContent = data.albums.album[0].artist.name;
-        document.getElementById('container').appendChild(artist);
+            //album name
+            // console.log(data.albums.album[0].name);
+            var albumName = document.createElement('h1');
+            albumName.textContent = data.albums.album[0].name;
+            document.getElementById('container').appendChild(albumName);
 
-        //url to album
-        // console.log(data.albums.album[0].url);
-        var albumUrl = document.createElement('a');
-        albumUrl.href = data.albums.album[0].url;
-        albumUrl.textContent = "Check it out on last.fm";
-        document.getElementById('container').appendChild(albumUrl);
+            //artist name
+            // console.log(data.albums.album[0].artist.name);
+            var artist = document.createElement('h3');
+            artist.textContent = data.albums.album[0].artist.name;
+            document.getElementById('container').appendChild(artist);
 
-    })
+            //url to album
+            // console.log(data.albums.album[0].url);
+            var albumUrl = document.createElement('a');
+            albumUrl.href = data.albums.album[0].url;
+            albumUrl.textContent = "Check it out on last.fm";
+            document.getElementById('container').appendChild(albumUrl);
+
+        })
 }
-
 function songAPI() {
     //last.fm fetch (song)
     fetch(lastFmBaseURL + trackResult)
