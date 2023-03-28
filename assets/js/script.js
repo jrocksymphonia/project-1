@@ -1,10 +1,10 @@
 //Capturing the two 3rd-party APIs we'll be using
 
 //Bored API giving us a randomized event 
-var randomActivity = "http://www.boredapi.com/api/activity/";
+var randomActivity = "https://www.boredapi.com/api/activity/";
 
 //last.fm API info
-var lastFmBaseURL = "http://ws.audioscrobbler.com/2.0/";
+var lastFmBaseURL = "https://ws.audioscrobbler.com/2.0/";
 var apiKey = "634d2baea68e8fb7f9f95bd75f1f9406";
 
 //Getting second Questions answer
