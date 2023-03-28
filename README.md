@@ -13,9 +13,7 @@ N/A
 Link to the live page here: https://jrocksymphonia.github.io/project-1/
 
 
-[Page 1](https://user-images.githubusercontent.com/127169775/228121495-1d536360-9d71-473b-a30c-2a2fd25990c1.webm)
-
-[Page 2](https://user-images.githubusercontent.com/127169775/228121674-a7eb8efc-90e7-4a05-9bca-c7f6ed246bdd.webm)
+[Demo of the page](./assets/images/demo-of-site.gif)
 
 
 ## Credits
