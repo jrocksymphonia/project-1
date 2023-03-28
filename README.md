@@ -12,8 +12,21 @@ N/A
 
 Link to the live page here: https://jrocksymphonia.github.io/project-1/
 
+![start page (index.html)](./assets/images/start-pg.png) 
 
-[Demo of the page](./assets/images/demo-of-site.gif)
+![start page with hovered button](./assets/images/start-pg-w%3Abtn-hvr.png)
+
+![form page (form.html)](./assets/images/form-pg-default.png)
+
+![generate an activity if the defaut activities don't suit you](./assets/images/form-pg-generate-activity.png)
+
+![generated default activity in drop-down menu](./assets/images/form-pg-generated-activity.png)
+
+![time to sumbit the form!)](./assets/images/submit-form.png)
+
+![This is the result for -artist- and randomly generated activity)](./assets/images/form-results.png)
+
+![A link to last.fm to listen to the music)](./assets/images/form-pg-default.png)
 
 
 ## Credits
