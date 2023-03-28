@@ -12,9 +12,12 @@ N/A
 ![Main page. Shows today's date](./assets/images/)
 
 
-
-
 Link to the live page here: https://jrocksymphonia.github.io/project-1/
+
+
+[228120337-dd23129b-a366-4053-8e3f-b1ba7448ec74.webm](https://user-images.githubusercontent.com/127169775/228121495-1d536360-9d71-473b-a30c-2a2fd25990c1.webm)
+
+[228120664-13b301e9-a973-4350-81ba-d2ff99da70e8 (1).webm](https://user-images.githubusercontent.com/127169775/228121674-a7eb8efc-90e7-4a05-9bca-c7f6ed246bdd.webm)
 
 
 ## Credits
