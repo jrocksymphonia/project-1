@@ -26,7 +26,7 @@ Link to the live page here: https://jrocksymphonia.github.io/project-1/
 
 ![This is the result for -artist- and randomly generated activity)](./assets/images/form-results.png)
 
-![A link to last.fm to listen to the music)](./assets/images/form-pg-default.png)
+![A link to last.fm to listen to the music)](./assets/images/link-to-lastFm.png)
 
 
 ## Credits
