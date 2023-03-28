@@ -9,15 +9,24 @@ N/A
 
 ## Usage
 
-![Main page. Shows today's date](./assets/images/)
-
 
 Link to the live page here: https://jrocksymphonia.github.io/project-1/
 
+![start page (index.html)](./assets/images/start-pg.png) 
 
-[228120337-dd23129b-a366-4053-8e3f-b1ba7448ec74.webm](https://user-images.githubusercontent.com/127169775/228121495-1d536360-9d71-473b-a30c-2a2fd25990c1.webm)
+![start page with hovered button](./assets/images/start-pg-w%3Abtn-hvr.png)
 
-[228120664-13b301e9-a973-4350-81ba-d2ff99da70e8 (1).webm](https://user-images.githubusercontent.com/127169775/228121674-a7eb8efc-90e7-4a05-9bca-c7f6ed246bdd.webm)
+![form page (form.html)](./assets/images/form-pg-default.png)
+
+![generate an activity if the defaut activities don't suit you](./assets/images/form-pg-generate-activity.png)
+
+![generated default activity in drop-down menu](./assets/images/form-pg-generated-activity.png)
+
+![time to sumbit the form!)](./assets/images/submit-form.png)
+
+![This is the result for -artist- and randomly generated activity)](./assets/images/form-results.png)
+
+![A link to last.fm to listen to the music)](./assets/images/link-to-lastFm.png)
 
 
 ## Credits
